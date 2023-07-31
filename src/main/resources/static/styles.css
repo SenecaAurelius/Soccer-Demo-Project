@@ -4,3 +4,11 @@ body {
 .error {
   color: red;
 }
+
+#playerNamesUl {
+    display: inline-block;
+}
+
+tr {
+    margin : 100px;
+}

@@ -4,8 +4,18 @@
 
 <!--<header th:replace="fragments :: header"></header>-->
 <body>
-    <h1>Hello Hello</h1>
 
+<!--Demo a tag that links to another part of the page-->
+<!--<a id="facebook_ads_example">This is the Facebook ad example I want to link to.</a>-->
+<!--<a rel="noopener" target="_blank" href="#facebook_ads_example">Click here to see an example of how a company uses Facebook ads.</a>-->
+
+
+<!--<a th:href="'/events/detail?eventId=' + ${event.id}" th:text="${event.name}">-->
+    <div>
+        <ul id="playerNamesUl" th:each="player : ${players}">
+            <ul><a rel="noopener" href="#${player.id}" th:text="${player.name}"></a></ul>
+        </ul>
+    </div>
 
 <!--    img th:src="@{/images/580_DUNN_CRYSTAL_4323.jpg}"> THIS WORKS-->
     <table class="table table-striped">
@@ -16,12 +26,14 @@
 <!--            <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">-->
 <!--            <img th:src="@{${'/img/' + players.id +'_'+ players.name + '.png'}}" width="120"/>-->
             <td>
-                <img th:src="@{${player.profilePic}}" alt="${player.name}"width="120" height="120">
+                <img id="${player.id}" th:src="@{${player.profilePic}}" alt="${player.name}"width="120" height="120">
             </td>
 
             <td th:text="${player.name}"></td>
             <td th:text="${player.goals}"></td>
         </tr>
     </table>
+
+
 </body>
 </html>
