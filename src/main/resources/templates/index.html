@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<!--<header th:replace="fragments :: header"></header>-->
+<body>
+    <h1>Hello Hello</h1>
+
+
+<!--    img th:src="@{/images/580_DUNN_CRYSTAL_4323.jpg}"> THIS WORKS-->
+    <table class="table table-striped">
+        <thead>
+            <tr>US Women's National Players</tr>
+        </thead>
+        <tr th:each="player : ${players}">
+<!--            <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">-->
+<!--            <img th:src="@{${'/img/' + players.id +'_'+ players.name + '.png'}}" width="120"/>-->
+            <td>
+                <img th:src="@{${player.profilePic}}" alt="${player.name}"width="120" height="120">
+            </td>
+
+            <td th:text="${player.name}"></td>
+            <td th:text="${player.goals}"></td>
+        </tr>
+    </table>
+</body>
+</html>
